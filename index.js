@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+//connect to DB
 mongoose.connect(
   process.env.DB_CONNECT,
   { useUnifiedTopology: true, useNewUrlParser: true },
@@ -14,6 +15,7 @@ mongoose.connect(
   }
 );
 
+//middleware
 app.use(express.json());
 app.use("/api/user", authRoute);
 
